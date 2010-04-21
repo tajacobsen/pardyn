@@ -177,8 +177,6 @@ class MultiPESParticle(ParticleOnPES):
             raise ValueError, "Shape mismatch"
 
         Npes = len(peslist)
-        if Npes > 2:
-            raise NotImplementedError, "Max two surfaces allowed"
 
         if surf not in range(Npes):
             raise IndexError, "Specified surface not available"
