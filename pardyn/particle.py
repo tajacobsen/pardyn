@@ -346,6 +346,8 @@ class SurfaceHoppingParticle(MultiPESParticle):
 
         collapse: bool
             Collaps wavefunctions upon hop
+
+        See MultiPESParticle for additional arguments.
         """
         self.collapse = kwargs.pop('collapse', False)
         MultiPESParticle.__init__(self, *args, **kwargs)
@@ -397,6 +399,10 @@ class SurfaceHoppingParticle(MultiPESParticle):
 class EhrenfestParticle(MultiPESParticle):
     """Ehrenfest dynamics particle"""
     def __init__(self, *args, **kwargs):
+        """Parameters:
+
+        See MultiPESParticle for arguments.
+        """
         MultiPESParticle.__init__(self, *args, **kwargs)
 
     def get_energy(self):
