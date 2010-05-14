@@ -342,7 +342,11 @@ class MultiPESParticle(ParticleOnPES):
 class SurfaceHoppingParticle(MultiPESParticle):
     """Surface hopping dynamics particle"""
     def __init__(self, *args, **kwargs):
-        self.newint = kwargs.pop('newint', True)
+        """Parameters:
+
+        collapse: bool
+            Collaps wavefunctions upon hop
+        """
         self.collapse = kwargs.pop('collapse', False)
         MultiPESParticle.__init__(self, *args, **kwargs)
 
