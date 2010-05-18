@@ -7,10 +7,22 @@ import numpy as np
 from ase.parallel import paropen, rank
 
 class Verlet:
+    """Verlet integrator for molecular dynamics"""
     def __init__(self, particle, dt,
                  trajectory=None,
                  logfile=None,
                 ):
+        """Parameters:
+
+        particle: ParticleOnPES (or subclass)
+            Particle to integrate the equations of motion for.
+        dt: float
+            Time step
+        trajectory: str
+            File storing stuff stuff during calculation
+        logfile: str
+            Logfile
+        """
         self.particle = particle
         self.dt = dt
         self.nsteps = 0
